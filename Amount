@@ -1,0 +1,46 @@
+import java.util.Scanner;
+class Account {
+    double balance;
+    Account() {
+        balance = 0;
+    }
+    Account(double b) {
+        balance = b;
+    }
+    void add(double amt) {
+        balance = balance + amt;
+    }
+    void withdraw(double amt) {
+        if (amt > balance) {
+            balance = balance - 5;
+            System.out.println("penalty");
+        } else {
+            balance = balance - amt;
+        }
+    }
+    double getBalance() {
+        return balance;
+    }
+    void addInterest(double rate) {
+        balance = balance + (balance * rate);
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter initial balance:");
+        double init = sc.nextDouble();
+        Account acc = new Account(init);
+        System.out.println("Enter deposit amount:");
+        double dep = sc.nextDouble();
+        acc.add(dep);
+        System.out.println("Enter withdraw amount:");
+        double wd = sc.nextDouble();
+        acc.withdraw(wd);
+        System.out.println("Enter interest rate ");
+        double rate = sc.nextDouble();
+        acc.addInterest(rate);
+        System.out.println("Final Balance: " + acc.getBalance());
+        sc.close();
+    }
+}
