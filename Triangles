@@ -1,0 +1,40 @@
+import java.util.Scanner;
+class Triangle {
+    double a, b, c;
+    Triangle(double x, double y, double z) {
+        a = x;
+        b = y;
+        c = z;
+    }
+    boolean isRight() {
+        return (a*a + b*b == c*c ||
+                a*a + c*c == b*b ||
+                b*b + c*c == a*a);
+    }
+    boolean isScalene() {
+        return (a != b && b != c && a != c);
+    }
+    boolean isIsosceles() {
+        return ((a == b && a != c) ||
+                (a == c && a != b) ||
+                (b == c && b != a));
+    }
+    boolean isEquilateral() {
+        return (a == b && b == c);
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter three sides of triangle:");
+        double x = sc.nextDouble();
+        double y = sc.nextDouble();
+        double z = sc.nextDouble();
+        Triangle t = new Triangle(x, y, z);
+        System.out.println("Is Right Triangle? " + t.isRight());
+        System.out.println("Is Scalene? " + t.isScalene());
+        System.out.println("Is Isosceles? " + t.isIsosceles());
+        System.out.println("Is Equilateral? " + t.isEquilateral());
+        sc.close();
+    }
+}
