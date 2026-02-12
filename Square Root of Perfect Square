@@ -1,0 +1,13 @@
+public class PerfectSquareRoot {
+    public static void main(String[] args) {
+
+        int num = 25;
+        int root = (int) Math.sqrt(num);
+
+        if (root * root == num) {
+            System.out.println("Roots are: " + root + " and " + (-root));
+        } else {
+            System.out.println("Not a perfect square");
+        }
+    }
+}
