@@ -1,0 +1,9 @@
+public class DecimalConversion {
+    public static void main(String[] args) {
+
+        int num = 25;
+
+        System.out.println("Binary: " + Integer.toBinaryString(num));
+        System.out.println("Octal: " + Integer.toOctalString(num));
+    }
+}
