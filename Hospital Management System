@@ -1,0 +1,47 @@
+public class HospitalManagement {
+
+    public static void main(String[] args) {
+
+        String name[] = {"Arun", "Priya"};
+        int age[] = {30, 25};
+        String sex[] = {"Male", "Female"};
+        String address[] = {"Chennai", "Salem"};
+        String illness[] = {"Fever", "Surgery"};
+        double charges[] = {5000, 20000};
+        int days[] = {10, 20};
+
+        int totalPatients = 2;
+
+        charges[0] = 6000;
+
+        System.out.println("Patient Details:");
+        for (int i = 0; i < totalPatients; i++) {
+
+            System.out.println("Name: " + name[i]);
+            System.out.println("Age: " + age[i]);
+            System.out.println("Sex: " + sex[i]);
+            System.out.println("Address: " + address[i]);
+            System.out.println("Illness: " + illness[i]);
+            System.out.println("Charges: " + charges[i]);
+            System.out.println("Days Admitted: " + days[i]);
+            System.out.println("----------------------");
+        }
+
+        System.out.println("Active Patients:");
+
+        for (int i = 0; i < totalPatients; i++) {
+
+            if (days[i] <= 15) {
+
+                System.out.println("Name: " + name[i]);
+                System.out.println("Age: " + age[i]);
+                System.out.println("Sex: " + sex[i]);
+                System.out.println("Address: " + address[i]);
+                System.out.println("Illness: " + illness[i]);
+                System.out.println("Charges: " + charges[i]);
+                System.out.println("Days Admitted: " + days[i]);
+                System.out.println("----------------------");
+            }
+        }
+    }
+}
