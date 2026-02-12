@@ -1,0 +1,43 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class StringOperations {
+
+    public static void main(String[] args) {
+
+        String sample = "The quick brown fox jumps over the lazy dog.";
+
+        String str1 = "Hello";
+        String str2 = "hello";
+        System.out.println("i) Compare ignoring case: " + str1.compareToIgnoreCase(str2));
+
+        String suffix = "dog.";
+        System.out.println("ii) Ends with 'dog.': " + sample.endsWith(suffix));
+
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        System.out.println("iii) Current Date & Time: " + now.format(format));
+
+        System.out.println("iv) Index of alphabets:");
+        for (char ch = 'a'; ch <= 'z'; ch++) {
+            System.out.println(ch + " : " + sample.indexOf(ch));
+        }
+
+        String replaced = sample.replaceAll("fox", "cat");
+        System.out.println("v) Replace 'fox' with 'cat': " + replaced);
+
+        String sub = sample.substring(4, 9);
+        System.out.println("vi) Substring (4,9): " + sub);
+
+        String withSpaces = "   Hello World   ";
+        System.out.println("vii) Trimmed: '" + withSpaces.trim() + "'");
+
+        System.out.println("viii) Lowercase: " + sample.toLowerCase());
+
+        System.out.println("ix) Length: " + sample.length());
+
+        String s1 = new String("Java");
+        String s2 = new String("Java");
+        System.out.println("x) s1 equals s2? " + s1.equals(s2));
+    }
+}
