@@ -1,0 +1,21 @@
+public class EmployeeBonus {
+    public static void main(String[] args) {
+
+        double salary = 9000;
+        char grade = 'A';
+        double bonus = 0;
+
+        if (grade == 'A')
+            bonus = salary * 0.05;
+        else if (grade == 'B')
+            bonus = salary * 0.10;
+
+        if (salary < 10000)
+            bonus += salary * 0.02;
+
+        double totalSalary = salary + bonus;
+
+        System.out.println("Bonus: " + bonus);
+        System.out.println("Total Salary: " + totalSalary);
+    }
+}
