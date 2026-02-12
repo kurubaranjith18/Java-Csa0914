@@ -1,0 +1,44 @@
+public class ValidParentheses {
+
+    public static void main(String[] args) {
+
+        String s = "{[()]}";
+
+        char stack[] = new char[s.length()];
+        int top = -1;
+        boolean valid = true;
+
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+
+            // If opening bracket → push
+            if (ch == '(' || ch == '{' || ch == '[') {
+                stack[++top] = ch;
+            }
+            // If closing bracket → check
+            else {
+                if (top == -1) {
+                    valid = false;
+                    break;
+                }
+
+                char open = stack[top--];
+
+                if ((ch == ')' && open != '(') ||
+                    (ch == '}' && open != '{') ||
+                    (ch == ']' && open != '[')) {
+                    valid = false;
+                    break;
+                }
+            }
+        }
+
+        if (top != -1)
+            valid = false;
+
+        if (valid)
+            System.out.println("Valid String");
+        else
+            System.out.println("Invalid String");
+    }
+}
