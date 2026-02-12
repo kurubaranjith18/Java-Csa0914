@@ -1,0 +1,9 @@
+public class DecimalToGray {
+    public static void main(String[] args) {
+
+        int num = 10;
+        int gray = num ^ (num >> 1);
+
+        System.out.println("Gray Code: " + Integer.toBinaryString(gray));
+    }
+}
