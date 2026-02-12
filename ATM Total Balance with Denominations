@@ -1,0 +1,16 @@
+public class ATMTotal {
+    public static void main(String[] args) {
+
+        int notes2000 = 5;
+        int notes500 = 10;
+        int notes200 = 20;
+        int notes100 = 50;
+
+        int total = (2000 * notes2000) +
+                    (500 * notes500) +
+                    (200 * notes200) +
+                    (100 * notes100);
+
+        System.out.println("Total ATM Balance: " + total);
+    }
+}
