@@ -1,0 +1,33 @@
+public class PalindromeCheck {
+    public static void main(String[] args) {
+
+        int choice = 1; // 1 for String, 2 for Number
+
+        if (choice == 1) {
+            String str = "madam";
+            String rev = "";
+
+            for (int i = str.length() - 1; i >= 0; i--)
+                rev += str.charAt(i);
+
+            if (str.equals(rev))
+                System.out.println("String is Palindrome");
+            else
+                System.out.println("Not Palindrome");
+
+        } else if (choice == 2) {
+            int num = 121;
+            int temp = num, rev = 0;
+
+            while (temp > 0) {
+                rev = rev * 10 + temp % 10;
+                temp /= 10;
+            }
+
+            if (rev == num)
+                System.out.println("Number is Palindrome");
+            else
+                System.out.println("Not Palindrome");
+        }
+    }
+}
